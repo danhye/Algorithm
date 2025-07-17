@@ -7,35 +7,19 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		String[] input = br.readLine().split(" ");
-		int first = Integer.parseInt(input[0]);
-		int second = Integer.parseInt(input[1]);
-		int third = Integer.parseInt(input[2]);
+		int a = Integer.parseInt(input[0]);
+		int b = Integer.parseInt(input[1]);
+		int c = Integer.parseInt(input[2]);
 		int prize = 0;
 		
-		boolean case1 = (first==second && first==third);
-		boolean case2 = (first==second || first==third || second==third ) != (first==second && second==third);
-		
-		
-		if(case1) {
-			prize = 10000+ first*1000;
-		}else if(case2) {
-			//어떤 두 값이 같은 지?
-			if(first==second) {
-				prize = 1000 + first*100;
-			}else if(first==third) {
-				prize = 1000 + first*100;
-			}else if(second==third) {
-				prize = 1000 + second*100;
-			}
-		}else { //3개 값이 다 다르면 max 값 찾기
-			int max = first;
-			if(second>max) {
-				max = second;
-			}
-            if(third>max) {
-				max = third;
-			}
-			
+		if(a==b && b==c) {
+			prize = 10000+ a * 1000;
+		}else if(a==b || a==c) {
+			prize = 1000 + a * 100;
+		}else if(b==c) {
+			prize = 1000 + b * 100;
+		}else {
+			int max = Math.max(a, Math.max(b, c));
 			prize = max * 100;
 		}
 		
