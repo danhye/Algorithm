@@ -13,23 +13,14 @@ public class Main {
 		
 		int cookTime = Integer.parseInt(br.readLine());
 		
+		int total = 0;
 		int resultHour = 0;
 		int resultMin = 0;
-		int overHour = (cookTime + startMin) /60;
-
 		
-		if(overHour>=1) {
-			resultHour = startHour + overHour;
-			resultMin = (cookTime + startMin) - (60*overHour);
-			
-		}else {
-            resultHour = startHour;
-			resultMin = startMin + cookTime;
-		}
+		total = (startHour*60) + startMin + cookTime;
+		resultHour = (total / 60) % 24;
+		resultMin = total % 60;
 		
-        //24시간
-		resultHour %= 24;
-        
 		System.out.print(resultHour + " " + resultMin);
 	}
 }
