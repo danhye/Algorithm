@@ -1,22 +1,14 @@
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        
-        double a = sc.nextDouble();
-        double b = sc.nextDouble();
-    
-        double actual = a/b;
-        double result = a/b;
-        
-        double absolute = Math.abs(actual-result);
-        double relative = absolute / Math.abs(actual);
-        
-        if(absolute<=1e-9 || relative<=1e-9){
-            System.out.print(result);
-        }else{
-            System.out.print("오류 발생");
-        }
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        Double A = Double.parseDouble(st.nextToken());
+        Double B = Double.parseDouble(st.nextToken());
+        System.out.println(A/B);
     }
 }
