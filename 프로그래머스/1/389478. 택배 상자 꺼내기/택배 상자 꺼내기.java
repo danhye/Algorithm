@@ -39,13 +39,6 @@ class Solution {
             }
         }
 
-        for(int i = 0; i < h; i++){
-            for(int j = 0; j < w; j++){
-                System.out.print(boxs[i][j]);
-            }
-            System.out.println();
-        }
-
         // 택배 빼기
         int answer = 0;
         if(boxs[h-1][ny] != 0){
